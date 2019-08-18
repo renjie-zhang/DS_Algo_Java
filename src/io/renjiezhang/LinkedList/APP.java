@@ -1,8 +1,7 @@
-package linkedlist;
-
+package renjiezhang.LinkedList;
 
 /**
- * @ClassName APP
+ * @ClassName renjiezhang.LinkedList.APP
  * @Description
  * @Author joker
  * @Date 2019/8/15 16:52
