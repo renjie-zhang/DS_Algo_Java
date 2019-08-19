@@ -1,4 +1,4 @@
-package renjiezhang.LinkedList;
+package io.renjiezhang.LinkedList;
 
 /**
  * @ClassName renjiezhang.LinkedList.LinkedList

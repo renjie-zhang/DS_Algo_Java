@@ -1,4 +1,4 @@
-package renjiezhang.SparseArray;
+package io.renjiezhang.SparseArray;
 
 /**
  * @author: renjie.zhang

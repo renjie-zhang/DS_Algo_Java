@@ -1,4 +1,4 @@
-package renjiezhang.LinkedList;
+package io.renjiezhang.LinkedList;
 
 /**
  * @ClassName renjiezhang.LinkedList.APP
@@ -6,7 +6,7 @@ package renjiezhang.LinkedList;
  * @Author joker
  * @Date 2019/8/15 16:52
  */
-public class APP {
+public class Application {
     public static void main(String[] args) {
         LinkedList list = new LinkedList();
         list.head = new LinkedList.Node(1);
