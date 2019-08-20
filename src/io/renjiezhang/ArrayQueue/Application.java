@@ -14,6 +14,7 @@ public class Application {
         System.out.println("输出打印队列中所有元素");
         queue.Show();
         System.out.printf("取出队列的头部数据:%d\n",queue.headData());
+        queue.addToQueue(23);
 
     }
 }
