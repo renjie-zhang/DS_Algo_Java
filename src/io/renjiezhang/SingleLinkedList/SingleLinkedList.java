@@ -3,7 +3,7 @@ package io.renjiezhang.SingleLinkedList;
 /**
  * @author: renjie.zhang
  * @date:2019/8/20-22:13
- * @Description: 单链表
+ * @Description: 单链表 顺序加入
  */
 public class SingleLinkedList {
     //首先初始化头节点，不存放任何数据
