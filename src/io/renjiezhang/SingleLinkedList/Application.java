@@ -40,6 +40,8 @@ public class Application {
         singleLinkedList.ReverseLinkedList(singleLinkedList.GetHead());
         System.out.println("反转链表之后");
         singleLinkedList.Show();
+        System.out.println("逆序打印");
+        singleLinkedList.ReversePrint(singleLinkedList.GetHead());
         /*
        添加两个节点之后的链表
         Node{data=23}

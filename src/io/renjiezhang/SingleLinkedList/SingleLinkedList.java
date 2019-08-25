@@ -1,5 +1,7 @@
 package io.renjiezhang.SingleLinkedList;
 
+import java.util.Stack;
+
 /**
  * @author: renjie.zhang
  * @date:2019/8/20-22:13
@@ -149,6 +151,26 @@ public class SingleLinkedList {
             current = next;
         }
         head.next = reverseLinkedList.next;
+    }
+
+    /**
+     * 单链表的逆序打印
+     * @param head
+     */
+    public void ReversePrint(Node head){
+        if(head.next == null){
+            return;
+        }
+        Stack<Node> stack = new Stack<>();
+        Node current = head.next;
+        while(current != null){
+            stack.push(current);
+            current = current.next;
+        }
+        //将栈中的数据出栈
+        while (stack.size()>0){
+            System.out.println(stack.pop());
+        }
     }
 
 }
