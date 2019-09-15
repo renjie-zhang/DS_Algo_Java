@@ -1,15 +1,17 @@
-package io.renjiezhang.ShellSort;
+package io.renjiezhang.InsertSort;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @author: renjie.zhang
- * @date:2019/9/12-22:18
- * @Description: 希尔排序
+ * @date:2019/9/15-14:03
+ * @Description: 插入排序
  */
-public class ShellSort {
+public class InsertSort {
+
     public static void main(String[] args) {
+
         Integer[] arr = new Integer[80000];
         for (int i = 0; i < 80000; i++) {
             arr[i] = (int) (Math.random() * 8000000);
@@ -26,23 +28,30 @@ public class ShellSort {
         Date data2 = new Date();
         String date2Str = simpleDateFormat.format(data2);
         System.out.println("排序之后" + date2Str);
+
     }
-    public static void sort(Comparable[] a){
-        int n = a.length;
-        int h = 1;
-        while (h<n/3){
-            h = 3*h+1;
-        }
-        while (h >= 1){
-            for (int i =h;i<n;i++){
-                for(int j=i;j>=h&&less(a[j],a[j-h]);j-=h){
-                    exchange(a,j,j-h);
-                }
+    private static void sort(Comparable[] a){
+
+        //交换法
+        for(int i = 1;i<a.length;i++){
+            for(int j = i;j>0&&less(a[j],a[j-1]);j--){
+                exchange(a,j,j-1);
             }
-            assert isHsorted(a,h);
-            h /=3;
-        }
-        assert isSorted(a);
+        }/*
+        //移位法
+        int insertValue = 0;
+        int insertIndex = 0;
+        for (int i = 1;i<a.length;i++){
+            insertValue = Integer.valueOf(a[i].toString());
+            insertIndex = i-1;
+            while (insertIndex >=0 && insertValue<Integer.valueOf(a[insertIndex].toString())){
+                a[insertIndex+1] = a[insertIndex];
+                insertIndex--;
+            }
+            if(insertIndex+1 != i){
+                a[insertIndex+1] = insertValue;
+            }
+        }*/
     }
 
     private static boolean less(Comparable v,Comparable w){
@@ -72,5 +81,4 @@ public class ShellSort {
             System.out.println(a[i]);
         }
     }
-
 }

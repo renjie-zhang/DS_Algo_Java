@@ -1,14 +1,15 @@
-package io.renjiezhang.ShellSort;
+package io.renjiezhang.SelectSort;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
  * @author: renjie.zhang
- * @date:2019/9/12-22:18
- * @Description: 希尔排序
+ * @date:2019/9/15-14:19
+ * @Description: 选择排序
  */
-public class ShellSort {
+public class SelectSort {
+
     public static void main(String[] args) {
         Integer[] arr = new Integer[80000];
         for (int i = 0; i < 80000; i++) {
@@ -27,22 +28,20 @@ public class ShellSort {
         String date2Str = simpleDateFormat.format(data2);
         System.out.println("排序之后" + date2Str);
     }
-    public static void sort(Comparable[] a){
-        int n = a.length;
-        int h = 1;
-        while (h<n/3){
-            h = 3*h+1;
-        }
-        while (h >= 1){
-            for (int i =h;i<n;i++){
-                for(int j=i;j>=h&&less(a[j],a[j-h]);j-=h){
-                    exchange(a,j,j-h);
+
+    private static void sort(Comparable[] a){
+        for(int i=0;i<a.length;i++){
+            //记录最小值的下标
+            int minValue = i;
+            for (int j = i+1;j<a.length;j++){
+                if(less(a[j],a[minValue])){
+                    //如果当前下标的值小于标记的下标，那么将进行exchange
+                    minValue = j;
                 }
             }
-            assert isHsorted(a,h);
-            h /=3;
+            //进行交换
+            exchange(a,i,minValue);
         }
-        assert isSorted(a);
     }
 
     private static boolean less(Comparable v,Comparable w){
@@ -72,5 +71,4 @@ public class ShellSort {
             System.out.println(a[i]);
         }
     }
-
 }
