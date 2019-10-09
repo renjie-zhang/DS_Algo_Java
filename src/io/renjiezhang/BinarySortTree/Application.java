@@ -13,6 +13,8 @@ public class Application {
             tree.add(new Node(array[i]));
         }
         System.out.println("binary tree print out");
+        Node n1 = new Node(5);
+        tree.deleteNode(n1);
         tree.infixOrder();
     }
 }
