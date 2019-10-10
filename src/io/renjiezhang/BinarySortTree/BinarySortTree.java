@@ -24,6 +24,7 @@ public class BinarySortTree {
      * 删除结点
      * @param node
      */
+    //todo 删除结点的另外一个方法
     public void deleteNode(Node node){
         if(root == null){
             return;
@@ -56,16 +57,24 @@ public class BinarySortTree {
             }else {
                 //删除的结点有左子结点
                 if(targetNode.left != null){
-                    if(targetParent.left.value == node.value){
-                        targetParent.left = targetNode.left;
-                    }else {
-                        targetParent.right = targetNode.left;
+                    if(targetParent != null){
+                        if(targetParent.left.value == node.value){
+                            targetParent.left = targetNode.left;
+                        }else {
+                            targetParent.right = targetNode.left;
+                        }
+                    }else{
+                        root = targetNode.left;
                     }
                 }else {
-                    if(targetParent.left.value == node.value){
-                        targetParent.left = targetNode.right;
+                    if(targetParent != null){
+                        if(targetParent.left.value == node.value){
+                            targetParent.left = targetNode.right;
+                        }else {
+                            targetParent.right = targetNode.right;
+                        }
                     }else {
-                        targetParent.right = targetNode.right;
+                        root = targetNode.right;
                     }
                 }
             }
