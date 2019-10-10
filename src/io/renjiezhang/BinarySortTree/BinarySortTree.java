@@ -51,7 +51,8 @@ public class BinarySortTree {
                     return;
                 }
             }else if (targetNode.left != null && targetNode.right != null){
-
+                    int minValue = delRightTree(targetNode.right);
+                    targetNode.value = minValue;
             }else {
                 //删除的结点有左子结点
                 if(targetNode.left != null){
@@ -69,6 +70,20 @@ public class BinarySortTree {
                 }
             }
         }
+    }
+
+    /**
+     * 二叉树
+     * @param node
+     * @return
+     */
+    public int delRightTree(Node node){
+        Node target = node;
+        while (target.left != null){
+            target = target.left;
+        }
+        deleteNode(target);
+        return target.value;
     }
 
     /**
