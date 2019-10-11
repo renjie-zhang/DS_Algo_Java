@@ -33,6 +33,23 @@ public class Node {
     }
 
     /**
+     * 二叉树右旋
+     */
+    public void rightRotate(){
+        //第一步 以当前根节点的值创建一个新的结点
+        Node newNode = new Node(value);
+        //第二步 把新的结点的右子树设置成当前结点的右子树
+        newNode.right = right;
+        //第三步 把新的结点的左子树设置成当前结点的左子树的右子树
+        newNode.left = left.right;
+        //第四步 将当前结点的值修改成左子结点的值
+        value = left.value;
+        //第五步 将当前结点的左子树设置成左子树的左子树
+        left = left.left;
+        //第六步 将当前结点的右子结点设置成新的结点
+        right = newNode;
+    }
+  /**
      * 返回当前结点的高度
      * @return
      */
@@ -85,7 +102,26 @@ public class Node {
         }
         //当添加完成之后，左子树的高度大于右子树的高度 --->左旋转
         if(rightHeight() - leftHeight() >1){
-            leftRotate();
+            //双旋转
+            if(right != null && right.leftHeight()> right.rightHeight()){
+                right.rightRotate();
+                leftRotate();
+            }else{
+                leftRotate();
+            }
+            //必须存在
+            return;
+        }
+        //当添加完成之后，右子树高度大于左子树的高度--->右子树
+        if(leftHeight() - rightHeight() > 1){
+            //双旋转
+            if(left != null && left.rightHeight() > left.leftHeight()){
+                left.leftRotate();
+                rightRotate();
+            }else {
+                rightRotate();
+            }
+
         }
     }
 
