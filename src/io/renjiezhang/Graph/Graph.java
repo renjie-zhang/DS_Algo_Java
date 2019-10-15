@@ -14,6 +14,8 @@ public class Graph {
     private int[][] edges;
     //表示边的数目
     private int numOfEdges;
+    //定义一个booealn[]
+    private boolean[] isVisited;
 
     /**
      * 构造方法
@@ -23,6 +25,72 @@ public class Graph {
         edges = new int[number][number];
         vertexList = new ArrayList<>(number);
         numOfEdges = 0;
+        isVisited= new boolean[5];
+    }
+
+    /**
+     * 图的深度优先算法
+     * @param isVisited 是否已访问过
+     * @param i
+     */
+    private void DFS(boolean[] isVisited,int i){
+        //首先输出访问的结点
+        System.out.print(getValueByIndex(i)+"-->");
+        //将结点设置为已经访问
+        isVisited[i] = true;
+        //查找结点i的第一个邻接点w
+        int w = getFirstVertex(i);
+        while (w != -1){
+            //说明存在邻接点
+            if(!isVisited[w]){
+                //未访问
+                DFS(isVisited,w);
+            }
+            //如果未访问过
+            w = getNextVertex(i,w);
+        }
+
+    }
+
+    /**
+     * DFS重载
+     */
+    public void DFS(){
+        //遍历所有的结点
+        for(int i =0 ;i<getNumberOfVertex();i++){
+            if(!isVisited[i]){
+                DFS(isVisited,i);
+            }
+        }
+    }
+
+    /**
+     * 获得第一个邻接点的下标
+     * @param index
+     * @return
+     */
+    public int getFirstVertex(int index){
+        for(int i = 0;i<vertexList.size();i++){
+            if(edges[index][i] >0){
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 根据前一个邻接点的下标来获取下一个邻接点
+     * @param value1
+     * @param value2
+     * @return
+     */
+    public int getNextVertex(int value1,int value2){
+        for(int j =value2+1;j<vertexList.size();j++){
+            if(edges[value1][j]>0){
+                return j;
+            }
+        }
+        return -1;
     }
 
     /**

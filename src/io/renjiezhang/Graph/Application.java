@@ -3,7 +3,7 @@ package io.renjiezhang.Graph;
 /**
  * @author: renjie.zhang
  * @date:2019/10/15-21:31
- * @Description:
+ * @Description: 图的main方法
  */
 public class Application {
     public static void main(String[] args) {
@@ -21,6 +21,8 @@ public class Application {
         graph.insertEdges(1,3,1);
         graph.insertEdges(1,4,1);
         graph.showGraph();
+        //深度优先
+        graph.DFS();
     }
 }
 /*
@@ -30,4 +32,5 @@ public class Application {
 [1, 1, 0, 0, 0]
 [0, 1, 0, 0, 0]
 [0, 1, 0, 0, 0]
+A-->B-->C-->D-->E-->
  */
