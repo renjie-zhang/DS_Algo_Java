@@ -16,6 +16,32 @@ public class BinaryFind {
         int[] array2 = new int[]{12,34,45,65,65,65,65,67,78,89};
         ArrayList<Integer> repeatEleByBinaryFind = getRepeatEleByBinaryFind(array2, 0, array2.length - 1, 65);
         System.out.println("多个目标值的下标为\n"+repeatEleByBinaryFind.toString());
+
+        int[] array3 = new int[]{12,34,45,65,67,78,89};
+        int j = BinaryFindNoRecursion(array3, 65);
+        System.out.printf("找到了元素索引值为%d\n",j);
+    }
+
+    /**
+     * 非递归方式的二分查找
+     * @param array 目标数组(升序)
+     * @param target 查找值
+     * @return 返回值的下标
+     */
+    public static int BinaryFindNoRecursion(int array[],int target){
+        int left = 0;
+        int right = array.length-1;
+        while (left<=right){
+            int mid = (left+right)/2;
+            if(array[mid] == target){
+                return mid;
+            }else if(array[mid]>target){
+                right = mid-1;
+            }else {
+                left = mid+1;
+            }
+        }
+        return -1;
     }
 
     /**
