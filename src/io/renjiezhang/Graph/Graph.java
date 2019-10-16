@@ -1,5 +1,7 @@
 package io.renjiezhang.Graph;
 
+import io.renjiezhang.ArrayQueue.ArrayQueue;
+
 import java.util.*;
 
 /**
@@ -26,6 +28,43 @@ public class Graph {
         vertexList = new ArrayList<>(number);
         numOfEdges = 0;
         isVisited= new boolean[5];
+    }
+
+
+    public void BFS(){
+        for(int i=0;i<getNumberOfVertex();i++){
+            if(!isVisited[i]){
+                BFS(isVisited,i);
+            }
+        }
+    }
+    /**
+     * 广度优先算法
+     * @param isVisited
+     * @param i
+     */
+    private void BFS(boolean[] isVisited,int i){
+        //表示队列的头节点对应的下标
+        int u;
+        //表示邻接点
+        int w;
+        //链表-->记录结点访问顺序
+        LinkedList list = new LinkedList();
+        System.out.print(getValueByIndex(i)+"->");
+        isVisited[i] = true;
+        list.addLast(i);
+        while (!list.isEmpty()){
+            u = (Integer)list.removeFirst();
+            w = getFirstVertex(u);
+            while (w != -1){
+                if(!isVisited[w]){
+                    System.out.print(getValueByIndex(w)+"->");
+                    isVisited[w] = true;
+                    list.addLast(w);
+                }
+                w = getNextVertex(u,w);
+            }
+        }
     }
 
     /**

@@ -22,7 +22,9 @@ public class Application {
         graph.insertEdges(1,4,1);
         graph.showGraph();
         //深度优先
-        graph.DFS();
+        //graph.DFS();
+        //广度优先
+        graph.BFS();
     }
 }
 /*
