@@ -5,12 +5,12 @@ import java.util.Scanner;
 /**
  * @author: renjie.zhang
  * @date:2019/11/24-16:38
- * @Description: 判断一个数是否为素数
+ * @Description: 判断一个数是否为素数 时间复杂度为O(√)
  */
 public class PrimeNum {
     /**
      * 判断一个整数是否为素数
-     * @param number 穿入参数
+     * @param number 穿入参数n
      * @return 若是素数返回1，如不是返回0
      */
     public static int prime(int number){
