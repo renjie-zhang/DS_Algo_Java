@@ -1,4 +1,4 @@
-package io.renjiezhang.ArrayQueue;
+package ArrayQueue;
 
 /**
  * @author: renjie.zhang
