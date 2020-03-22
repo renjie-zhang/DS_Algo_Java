@@ -1,4 +1,4 @@
-package io.renjiezhang.BinarySortTree;
+package binarysorttree;
 
 /**
  * @author: renjie.zhang

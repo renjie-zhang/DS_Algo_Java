@@ -1,12 +1,11 @@
-package io.renjiezhang.BinarySortTree;
+package avltree;
 
 /**
  * @author: renjie.zhang
- * @date:2019/10/7-21:01
- * @Description: 二叉排序树
+ * @date:2019/10/10-22:31
+ * @Description:
  */
-public class BinarySortTree {
-
+public class AVLTree {
     private Node root;
     /**
      *添加结点
@@ -24,7 +23,6 @@ public class BinarySortTree {
      * 删除结点
      * @param node
      */
-    //todo 删除结点的另外一个方法
     public void deleteNode(Node node){
         if(root == null){
             return;
@@ -52,8 +50,8 @@ public class BinarySortTree {
                     return;
                 }
             }else if (targetNode.left != null && targetNode.right != null){
-                    int minValue = delRightTree(targetNode.right);
-                    targetNode.value = minValue;
+                int minValue = delRightTree(targetNode.right);
+                targetNode.value = minValue;
             }else {
                 //删除的结点有左子结点
                 if(targetNode.left != null){
@@ -128,5 +126,8 @@ public class BinarySortTree {
             root.infixOrder();
         }
     }
-}
 
+    public Node getRoot() {
+        return root;
+    }
+}

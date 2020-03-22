@@ -1,4 +1,4 @@
-package io.renjiezhang.AVLTree;
+package avltree;
 
 /**
  * @author: renjie.zhang

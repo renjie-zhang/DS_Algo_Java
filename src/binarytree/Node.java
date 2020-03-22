@@ -1,4 +1,4 @@
-package io.renjiezhang.BinaryTree;
+package binarytree;
 
 /**
  * @author: renjie.zhang

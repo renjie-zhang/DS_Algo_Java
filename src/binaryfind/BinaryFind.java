@@ -1,4 +1,4 @@
-package io.renjiezhang.BinaryFind;
+package binaryfind;
 
 import java.util.ArrayList;
 
