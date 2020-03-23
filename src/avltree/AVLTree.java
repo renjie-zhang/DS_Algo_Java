@@ -1,10 +1,5 @@
 package avltree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/10-22:31
- * @Description:
- */
 public class AVLTree {
     private Node root;
     /**

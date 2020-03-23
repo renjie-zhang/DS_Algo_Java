@@ -1,10 +1,5 @@
 package binarysorttree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/7-21:01
- * @Description: 二叉排序树
- */
 public class BinarySortTree {
 
     private Node root;

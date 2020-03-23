@@ -1,10 +1,5 @@
 package avltree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/10-22:25
- * @Description:
- */
 public class Application {
     public static void main(String[] args) {
         /*二叉树左旋

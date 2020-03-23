@@ -1,10 +1,6 @@
 package binarytree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/9/24-21:52
- * @Description:
- */
+
 public class Application {
     public static void main(String[] args) {
         BinaryTree binaryTree = new BinaryTree();

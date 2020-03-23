@@ -1,10 +1,5 @@
 package avltree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/10-22:24
- * @Description:
- */
 public class Node {
     public int value;
     public Node left;

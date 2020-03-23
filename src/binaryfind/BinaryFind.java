@@ -2,11 +2,6 @@ package binaryfind;
 
 import java.util.ArrayList;
 
-/**
- * @author: renjie.zhang
- * @date:2019/9/22-16:16
- * @Description: 二分查找
- */
 public class BinaryFind {
     public static void main(String[] args) {
         int[] array1 = new int[]{12,34,45,65,67,78,89};

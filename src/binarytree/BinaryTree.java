@@ -1,10 +1,6 @@
 package binarytree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/9/24-21:24
- * @Description: 二叉树的遍历
- */
+
 public class BinaryTree {
 
     private Node root;

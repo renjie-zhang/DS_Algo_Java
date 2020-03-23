@@ -1,10 +1,5 @@
 package binarytree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/9/24-21:52
- * @Description:
- */
 public class Node {
     private int no;
     private String name;

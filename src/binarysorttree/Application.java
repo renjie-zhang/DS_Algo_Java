@@ -1,10 +1,6 @@
 package binarysorttree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/7-21:11
- * @Description: main method
- */
+
 public class Application {
     public static void main(String[] args) {
         int[] array = {7,3,10,12,5,1,9};

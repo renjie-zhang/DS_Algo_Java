@@ -1,10 +1,5 @@
 package binarysorttree;
 
-/**
- * @author: renjie.zhang
- * @date:2019/10/7-21:01
- * @Description:
- */
 public class Node {
     public int value;
     public Node left;
